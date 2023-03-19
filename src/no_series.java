@@ -8,7 +8,7 @@ public class no_series {
 	    int d; 
 	   
 	    // Generate the ith term and 
-	    // print it 
+	    //  print it 
 	    if (n == 1)  
 	    { 
 	        System.out.print(a + " "); 
