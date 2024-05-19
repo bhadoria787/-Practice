@@ -10,7 +10,7 @@ public class STRING_all_combination_of_string
 	        otstr.append(istr.charAt(i));
 	        System.out.println(otstr);
 	        combine(istr, otstr, i + 1);
-	        System.out.println("before delete "+i+": "+otstr);
+	        //System.out.println("before delete "+i+": "+otstr);
 	        otstr.deleteCharAt(otstr.length() - 1);
 	    }
 	} 
