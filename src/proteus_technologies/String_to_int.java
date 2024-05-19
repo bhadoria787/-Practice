@@ -2,36 +2,34 @@ package proteus_technologies;
 
 public class String_to_int 
 {
-	public static int convertStringToInt(String inputString) 
-	{
-		int i = 0;
-		int number = 0;
-		boolean isNegative = false;
-		int len = inputString.length();
+    public static void main(String[] args) {
+        String intString = "123";
+        int intValue = stringToInt(intString);
+        System.out.println("String to Integer: " + intValue);
+    }
 
-		if (inputString.charAt(0) == '-') 
-		{
-			isNegative = true;
-			i = 1;
-		}
-		
-		while (i < len) 
-		{
-			number *= 10;
-			number += (inputString.charAt(i++)-'0');
-		}
-		
-		if (isNegative)
-		{
-			number = -number;
-		}
-		return number;
-	}
+    public static int stringToInt(String str) {
+        int numberformat = 0;
+        boolean isNegative = false;
+        int i = 0;
 
-	public static void main(String[] args) 
-	{
-		int a=String_to_int.convertStringToInt("-2035");
-		System.out.println(a+10);
-	}
+        if (str.charAt(0) == '-') {
+            isNegative = true;
+            i = 1;
+        }
 
+        for (; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
+                throw new NumberFormatException("Invalid character in number: " + c);
+            }
+            numberformat = numberformat * 10 + (c - '0');
+        }
+
+        if (isNegative) {
+            numberformat = -numberformat;
+        }
+
+        return numberformat;
+    }
 }
